@@ -177,7 +177,7 @@ intel_dp_aux_set_dynamic_backlight_percent(struct intel_dp *intel_dp,
 
 	if (drm_dp_dpcd_write(&intel_dp->aux, DP_EDP_DBC_MINIMUM_BRIGHTNESS_SET,
 			      dbc, sizeof(dbc)) < 0) {
-		drm_dbg_kms(&dbc->drm,
+		drm_dbg_kms(intel_dp,
 			    "Failed to write aux DBC brightness level\n",
 			   DP_EDP_DBC_MINIMUM_BRIGHTNESS_SET);
 		return false;
